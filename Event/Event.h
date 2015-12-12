@@ -87,6 +87,9 @@ namespace System {
                     }
                 }
                 if (found) {
+                    IDelegate* handler = handlers[index];
+                    delete handler;
+                    handler = nullptr;
                     handlers.erase(handlers.begin() + index);
                 }
                 return *this;
